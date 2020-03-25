@@ -1,8 +1,8 @@
 # VS-Code-Node.js-React.js--Configurando-o-Ambiente-de-Desenvolvimento
 
-## Node.js + Express + ES6 + ESLint + Prettier + EditorConfig
+## Node.js + React.js Express + ES6 + ESLint + Prettier + EditorConfig
 
-#### Para criar um novo projeto basta executar:
+#### Para criar um novo em Node.js projeto basta executar:
 
 `yarn init -y`
 
@@ -18,6 +18,15 @@ Agora iremos instalar nossas primeiras dependências de produção:
 - **cors (cross-origin):** é uma especificação que define meios para que um recurso do servidor seja acessado remotamente via web/rede; Resumidamente, o cors permite que nossa aplicação seja acessada de um endereço externo;
 
 - **dotenv:** é um módulo de dependência zero, responsável por carregar variáveis de ambiente de um arquivo .env em process.env.\*.
+
+#### Para criar um novo em React.js projeto basta executar:
+
+```
+npx create-react-app my-app
+cd my-app
+npm start
+
+```
 
 #### Agora iremos adicionar as dependências de desenvolvimento do nosso projeto:
 
@@ -125,6 +134,7 @@ module.exports = {
   }
 }
 ```
+### Node.js e React.js
 
 Na raiz do projeto crie o arquivo **.prettierrc** e adicione este conteúdo a ele:
 
@@ -163,6 +173,31 @@ insert_final_newline = true
 - O **trim_trailing_whitespace = true** removerá os espaços em branco no final de cada linha.
 - O **insert_final_newline = true** vai adicionar uma linha em branco no final de cada arquivo.
 
+>Obs: Usando o react-create-app, não vamos precisar configurar o nodemon e o sucrase.
+
+Por fim edite o arquivo package.json e inclua o bloco referente a tag "scripts". Veja um exemplo:
+
+```
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "scripts" : {
+    "dev": "nodemon --exec sucrase-node ./src/index.js"
+  },
+  "dependencies": {
+//...
+```
+
+Terminamos ^^
+
+Agora podemos executar no terminal a instrução:
+
+`yarn dev`
+
+### Dotenv Node.js
+
 Na raiz do projeto crie um arquivo .env com o conteúdo:
 
 `PORT=3000`
@@ -196,27 +231,6 @@ app.listen(process.env.PORT || 3000, () => {
 ```
 
 > Importante: utilizo app.disable('x-powered-by') para remover da resposta HTTP a referência de que o Express/Node compõem a lista de tecnologias utilizadas, isso irá afastar rotinas mais simples de varredura e ataques automatizados.
-
-Por fim edite o arquivo package.json e inclua o bloco referente a tag "scripts". Veja um exemplo:
-
-```
-{
-  "name": "teste",
-  "version": "1.0.0",
-  "main": "./src/index.js",
-  "license": "MIT",
-  "scripts" : {
-    "dev": "nodemon --exec sucrase-node ./src/index.js"
-  },
-  "dependencies": {
-//...
-```
-
-Terminamos ^^
-
-Agora podemos executar no terminal a instrução:
-
-`yarn dev`
 
 > Fontes:
 >
