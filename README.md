@@ -134,6 +134,7 @@ module.exports = {
   }
 }
 ```
+
 ### Node.js e React.js
 
 Na raiz do projeto crie o arquivo **.prettierrc** e adicione este conteúdo a ele:
@@ -173,7 +174,7 @@ insert_final_newline = true
 - O **trim_trailing_whitespace = true** removerá os espaços em branco no final de cada linha.
 - O **insert_final_newline = true** vai adicionar uma linha em branco no final de cada arquivo.
 
->Obs: Usando o react-create-app, não vamos precisar configurar o nodemon e o sucrase.
+> Obs: Usando o react-create-app, não vamos precisar configurar o nodemon e o sucrase.
 
 Por fim edite o arquivo package.json e inclua o bloco referente a tag "scripts". Veja um exemplo:
 
@@ -194,7 +195,7 @@ Terminamos ^^
 
 Agora podemos executar no terminal a instrução:
 
-`yarn dev`
+`yarn dev` ou `yarn start`
 
 ### Dotenv Node.js
 
